@@ -4,17 +4,13 @@ import { createRouter, createWebHashHistory }
 import Home from "./home.js";
 import About from "./about.js";
 import Contact from "./contact.js";
-import Book from "./book.js"; // NEW
-
-const routes = [
-  { path: "/", component: Home },
-  { path: "/about", component: About },
-  { path: "/contact", component: Contact },
-  { path: "/book/:id", component: Book }, // NEW
-  { path: "/:pathMatch(.*)*", redirect: "/" },
-];
 
 export default createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes: [
+    { path: "/", component: Home },
+    { path: "/about", component: About },
+    { path: "/contact", component: Contact },
+    { path: "/:pathMatch(.*)*", redirect: "/" },
+  ],
 });
