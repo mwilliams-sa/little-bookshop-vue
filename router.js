@@ -1,19 +1,20 @@
-// Import Vue Router from CDN
 import { createRouter, createWebHashHistory }
   from "https://unpkg.com/vue-router@4/dist/vue-router.esm-browser.js";
 
 import Home from "./home.js";
 import About from "./about.js";
 import Contact from "./contact.js";
+import Book from "./book.js"; // NEW
 
 const routes = [
   { path: "/", component: Home },
   { path: "/about", component: About },
   { path: "/contact", component: Contact },
-  { path: "/:pathMatch(.*)*", redirect: "/" }, // catch-all
+  { path: "/book/:id", component: Book }, // NEW
+  { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 
 export default createRouter({
-  history: createWebHashHistory(), // necessary for GitHub Pages
+  history: createWebHashHistory(),
   routes,
 });
