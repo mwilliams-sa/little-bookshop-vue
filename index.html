@@ -18,43 +18,7 @@
 
   <main id="app"></main>
 
-  <!-- Global builds: no imports, no bundler -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
-  <script>
-    const Home = { template: `
-      <section class="page">
-        <h2>Welcome to the Little Bookshop</h2>
-        <p>Browse our shelves and discover your next favourite read.</p>
-      </section>` };
-
-    const About = { template: `
-      <section class="page">
-        <h2>About Us</h2>
-        <p>A tiny shop with a big love for stories.</p>
-      </section>` };
-
-    const Contact = { template: `
-      <section class="page">
-        <h2>Contact</h2>
-        <p>Email us at hello@littlebookshop.example</p>
-      </section>` };
-
-    const { createRouter, createWebHashHistory } = VueRouter;
-    const router = createRouter({
-      history: createWebHashHistory(),
-      routes: [
-        { path: '/', component: Home },
-        { path: '/about', component: About },
-        { path: '/contact', component: Contact },
-        { path: '/:pathMatch(.*)*', redirect: '/' },
-      ],
-    });
-
-    const App = { template: `<router-view></router-view>` };
-
-    const { createApp } = Vue;
-    createApp(App).use(router).mount('#app');
-  </script>
+  <!-- IMPORTANT: type="module" -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
