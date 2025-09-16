@@ -1,4 +1,4 @@
-eexport default {
+export default {
   data() {
     return {
       books: [
@@ -30,27 +30,12 @@ eexport default {
           price: "R269",
           img: "https://picsum.photos/seed/book4/300/420",
         },
-        {
-          id: 5,
-          title: "Scarred",
-          author: "E. McIntire",
-          price: "R289",
-          img: "https://picsum.photos/seed/book5/300/420",
-        },
-        {
-          id: 6,
-          title: "Unhinged",
-          author: "S. Macca",
-          price: "R259",
-          img: "https://picsum.photos/seed/book6/300/420",
-        },
       ],
     };
   },
   template: `
     <section class="page">
       <h2 class="section-title">Featured Books</h2>
-
       <div class="book-grid">
         <article v-for="b in books" :key="b.id" class="book-card">
           <div class="book-cover">
