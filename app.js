@@ -1,4 +1,4 @@
-// Pull Vue from the CDN, not from "vue"
+// Import Vue directly from CDN
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import router from "./router.js";
 
