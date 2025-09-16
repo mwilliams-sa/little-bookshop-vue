@@ -1,4 +1,4 @@
-body { font-family: Quicksand, Arial, sans-serif; margin:0; }
-header { background:#6b4fad; padding:1rem; color:white; }
-nav a { color:white; margin-right:1rem; text-decoration:none; }
-.router-link-active { font-weight:bold; }
+body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+.site-header { padding: 1rem; border-bottom: 1px solid #eee; }
+.nav a { margin-right: 1rem; text-decoration: none; }
+.page { padding: 1.25rem; }
