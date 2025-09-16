@@ -1,6 +1,10 @@
+// ESM build from CDN (works in the browser without bundlers)
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import router from "./router.js";
 
 const App = { template: `<router-view></router-view>` };
-createApp(App).use(router).mount("#app");
+
+createApp(App)
+  .use(router)
+  .mount("#app");
 
