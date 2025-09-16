@@ -1,6 +1,5 @@
-// app.js
-import { router } from './router.js';
+import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import router from "./router.js";
 
-const app = Vue.createApp({});
-app.use(router);
-app.mount('#app');
+const App = { template: `<router-view></router-view>` };
+createApp(App).use(router).mount("#app");
