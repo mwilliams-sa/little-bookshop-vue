@@ -3,3 +3,4 @@ import router from "./router.js";
 
 const App = { template: `<router-view></router-view>` };
 createApp(App).use(router).mount("#app");
+
