@@ -1,29 +1,60 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Little Bookshop</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <h1>Little Bookshop</h1>
-      <nav class="nav">
-        <a href="#/">Home</a>
-        <a href="#/about">About</a>
-        <a href="#/contact">Contact</a>
-      </nav>
-    </header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Little Bookshop</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Little Bookshop</h1>
+    <nav class="nav">
+      <a href="#/">Home</a>
+      <a href="#/about">About</a>
+      <a href="#/contact">Contact</a>
+    </nav>
+  </header>
 
-    <main id="app"></main>
+  <main id="app"></main>
 
-    <script type="module">
-      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-      import router from "./router.js";
-      const App = { template: `<router-view></router-view>` };
-      createApp(App).use(router).mount("#app");
-    </script>
-  </body>
+  <!-- Global builds: no imports, no bundler -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
+  <script>
+    const Home = { template: `
+      <section class="page">
+        <h2>Welcome to the Little Bookshop</h2>
+        <p>Browse our shelves and discover your next favourite read.</p>
+      </section>` };
+
+    const About = { template: `
+      <section class="page">
+        <h2>About Us</h2>
+        <p>A tiny shop with a big love for stories.</p>
+      </section>` };
+
+    const Contact = { template: `
+      <section class="page">
+        <h2>Contact</h2>
+        <p>Email us at hello@littlebookshop.example</p>
+      </section>` };
+
+    const { createRouter, createWebHashHistory } = VueRouter;
+    const router = createRouter({
+      history: createWebHashHistory(),
+      routes: [
+        { path: '/', component: Home },
+        { path: '/about', component: About },
+        { path: '/contact', component: Contact },
+        { path: '/:pathMatch(.*)*', redirect: '/' },
+      ],
+    });
+
+    const App = { template: `<router-view></router-view>` };
+
+    const { createApp } = Vue;
+    createApp(App).use(router).mount('#app');
+  </script>
+</body>
 </html>
-
