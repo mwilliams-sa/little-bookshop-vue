@@ -1,9 +1,5 @@
-import { createRouter, createWebHashHistory } 
+import { createRouter, createWebHashHistory }
   from "https://unpkg.com/vue-router@4/dist/vue-router.esm-browser.js";
-
-import Home from "./home.js";
-import About from "./about.js";
-import Contact from "./contact.js";
 
 const routes = [
   { path: "/", component: Home },
@@ -12,7 +8,4 @@ const routes = [
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 
-export default createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
+export default createRouter({ history: createWebHashHistory(), routes });
