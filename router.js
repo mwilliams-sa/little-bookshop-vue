@@ -1,19 +1,18 @@
-// router.js
-import Home from './components/Home.js';
-import About from './components/About.js';
-import Contact from './components/Contact.js';
+import { createRouter, createWebHashHistory } 
+  from "https://unpkg.com/vue-router@4/dist/vue-router.esm-browser.js";
 
-const { createRouter, createWebHashHistory } = VueRouter;
+import Home from "./home.js";
+import About from "./about.js";
+import Contact from "./contact.js";
 
-// You can switch to createWebHistory() if you host on a server
-export const router = createRouter({
+const routes = [
+  { path: "/", component: Home },
+  { path: "/about", component: About },
+  { path: "/contact", component: Contact },
+  { path: "/:pathMatch(.*)*", redirect: "/" },
+];
+
+export default createRouter({
   history: createWebHashHistory(),
-  routes: [
-    { path: '/',        name: 'home',    component: Home },
-    { path: '/about',   name: 'about',   component: About },
-    { path: '/contact', name: 'contact', component: Contact },
-  ],
-  scrollBehavior() {
-    return { top: 0 };
-  },
+  routes,
 });
