@@ -1,51 +1,25 @@
+import { books } from "./books.js";
+
 export default {
   data() {
-    return {
-      books: [
-        {
-          id: 1,
-          title: "Velora Isle",
-          author: "M. Williams",
-          price: "R249",
-          img: "https://picsum.photos/seed/book1/300/420",
-        },
-        {
-          id: 2,
-          title: "A Kingdom of Fire & Fate",
-          author: "H. Renee",
-          price: "R299",
-          img: "https://picsum.photos/seed/book2/300/420",
-        },
-        {
-          id: 3,
-          title: "Hooked",
-          author: "E. McIntire",
-          price: "R279",
-          img: "https://picsum.photos/seed/book3/300/420",
-        },
-        {
-          id: 4,
-          title: "Priest",
-          author: "S. Simone",
-          price: "R269",
-          img: "https://picsum.photos/seed/book4/300/420",
-        },
-      ],
-    };
+    return { books };
   },
   template: `
     <section class="page">
       <h2 class="section-title">Featured Books</h2>
+
       <div class="book-grid">
         <article v-for="b in books" :key="b.id" class="book-card">
-          <div class="book-cover">
+          <a :href="'#/book/' + b.id" class="book-cover">
             <img :src="b.img" :alt="b.title + ' cover'" loading="lazy">
-          </div>
+          </a>
           <div class="book-meta">
-            <h3 class="book-title">{{ b.title }}</h3>
+            <h3 class="book-title">
+              <a :href="'#/book/' + b.id">{{ b.title }}</a>
+            </h3>
             <p class="book-author">{{ b.author }}</p>
             <p class="book-price">{{ b.price }}</p>
-            <a href="#/contact" class="btn">Enquire</a>
+            <a :href="'#/book/' + b.id" class="btn">View details</a>
           </div>
         </article>
       </div>
