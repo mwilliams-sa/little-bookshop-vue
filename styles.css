@@ -1,4 +1,6 @@
-body { font-family: system-ui, Arial, sans-serif; margin: 0; }
-.site-header { padding: 1rem; border-bottom: 1px solid #eee; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; color: #222; }
+.site-header { padding: 1rem; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; }
 .nav a { margin-right: 1rem; text-decoration: none; }
+.nav a:last-child { margin-right: 0; }
 .page { padding: 1.25rem; }
